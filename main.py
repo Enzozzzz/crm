@@ -12,6 +12,11 @@ class DefaultConfig:
 
 app = Flask(__name__)
 
+
+# 获取请求钩子
+from common.utils.middlewares import jwt_authentication
+app.before_request(jwt_authentication)
+
 # 加载配置文件
 app.config.from_object(DefaultConfig)
 

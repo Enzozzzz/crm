@@ -29,10 +29,12 @@ def verify_jwt(token, secret=None):
     """
     if not secret:
         secret = current_app.config['JWT_SECRET']
-
+        print(secret)
     try:
         payload = jwt.decode(token, secret, algorithm=['HS256'])
+        print("payload2", payload)
     except jwt.PyJWTError:
         payload = None
+        print("verify error")
 
     return payload
