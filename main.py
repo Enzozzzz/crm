@@ -7,7 +7,7 @@ class DefaultConfig:
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@127.0.0.1:3306/crm'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
-    JWT_SECRET = "deefefefefe"
+    JWT_SECRET = "testcrm"
 
 
 app = Flask(__name__)
