@@ -27,9 +27,9 @@ def verify_jwt(token, secret=None):
     :param secret: 密钥
     :return: dict: payload
     """
+    token = token.replace('"', '')
     if not secret:
         secret = current_app.config['JWT_SECRET']
-        print(secret)
     try:
         payload = jwt.decode(token, secret, algorithm=['HS256'])
         print("payload2", payload)

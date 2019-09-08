@@ -1,10 +1,19 @@
-git init 
-git add . 
-git commit -m "first commit" 
-git remote add origin https://github.com/Enzozzzz/crm.git 
-git push -u origin master
+9月8日 v1.0
+
+postman测试接口
+登录接口/返回jwt_token    http://127.0.0.1:5000/login
+根据用户返回对应的菜单列表  http://127.0.0.1:5000/show_menus
+只有url访问权限的用户才能访问  http://127.0.0.1:5000/users
+
+第一版只做了大致的框架
+1. 通过装饰器实现了访问接口登录认证权限
+2. 通过装饰器实现了菜单的访问权限控制
 
 
-POSTMAN 测试
+下一版功能预告
 
-登录接口 http://127.0.0.1:5000/login
+1. 对冗余的代码进一步的封装
+2. 代码的规范
+3. 将具体的用户相关角色,权限,菜单罗列出来
+
+

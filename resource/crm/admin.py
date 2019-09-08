@@ -1,13 +1,16 @@
-from flask import g
+from flask import request
 from flask_restful import Resource
 
 from common.models.crm import User, Role, UserRole, UserGroup, Group
+from common.utils.decorators import login_required
 
 
 class UserRolesPermission(Resource):
     """
     获取用户id,姓名,角色,用户组
     """
+    method_decorators = [login_required]
+
     def get(self):
         users = User.query.all()
 
@@ -38,7 +41,5 @@ class UserRolesPermission(Resource):
             # TODO 找到用户所在的角色在的用户组,也添加进去
 
             role_list.append(user_dict)
-
-        print("用户id:", g.user_id)
 
         return role_list

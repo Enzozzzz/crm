@@ -61,5 +61,32 @@ class RoleGroup(db.Model):
     group_id = db.Column(db.String, doc='用户组id')
 
 
+class RolePermission(db.Model):
+    """
+    角色-组表
+    """
+    __tablename__ = 'role_permission'
+    id = db.Column('id', db.Integer, primary_key=True, doc='id')
+    role_id = db.Column(db.String, doc='角色id')
+    permission_id = db.Column(db.String, doc='用户组id')
 
+
+class MenuPermission(db.Model):
+    """
+    角色-组表
+    """
+    __tablename__ = 'menu_permission'
+    id = db.Column('id', db.Integer, primary_key=True, doc='id')
+    menu_id = db.Column(db.String, doc='菜单id')
+    permission_id = db.Column(db.String, doc='权限id')
+
+
+class Menu(db.Model):
+    """
+    角色-组表
+    """
+    __tablename__ = 'menu'
+    id = db.Column('id', db.Integer, primary_key=True, doc='id')
+    name = db.Column(db.String, doc='菜单')
+    url = db.Column(db.String, doc='url地址')
 
