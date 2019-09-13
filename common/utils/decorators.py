@@ -3,7 +3,7 @@ from flask import g, request
 
 
 # 验证是否登录
-from common.utils.get_menu import get_menu
+from common.utils.rbac.get_menu import get_menu
 
 
 def login_required(f):

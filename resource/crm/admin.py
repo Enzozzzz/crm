@@ -9,7 +9,7 @@ class UserRolesPermission(Resource):
     """
     获取用户id,姓名,角色,用户组
     """
-    method_decorators = [login_required]
+    # method_decorators = [login_required]
 
     def get(self):
         users = User.query.all()
@@ -38,7 +38,6 @@ class UserRolesPermission(Resource):
                 usergroup_list.append(group.name)
             user_dict['group'] = usergroup_list
 
-            # TODO 找到用户所在的角色在的用户组,也添加进去
 
             role_list.append(user_dict)
 

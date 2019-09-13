@@ -1,14 +1,15 @@
-from flask import g, request
+from flask import g
 from flask_restful import Resource
-from common.utils.decorators import login_required, menu_permission_required
-from common.utils.get_menu import get_menu
+from common.utils.decorators import menu_permission_required
+from common.utils.rbac.get_menu import get_menu
 
 
 class ShowMenu(Resource):
     """
     去数据库中取出对应的菜单list
+    url:/show_menus
     """
-    method_decorators = [login_required]
+    # method_decorators = [login_required]
 
     def get(self):
 

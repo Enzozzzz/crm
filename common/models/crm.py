@@ -20,6 +20,7 @@ class Role(db.Model):
     __tablename__ = 'role'
     id = db.Column('id', db.Integer, primary_key=True, doc='角色id')
     name = db.Column(db.String, doc='名称')
+    prole_id = db.Column(db.Integer, doc='父类id')
 
 
 class UserRole(db.Model):
