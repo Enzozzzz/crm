@@ -40,6 +40,7 @@ class Group(db.Model):
     __tablename__ = 'ugroup'
     id = db.Column('id', db.Integer, primary_key=True, doc='用户组id')
     name = db.Column(db.String, doc='名称')
+    pgroup_id = db.Column(db.Integer, doc='用户组id')
 
 
 class UserGroup(db.Model):

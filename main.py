@@ -8,6 +8,7 @@ class DefaultConfig:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False
     JWT_SECRET = "testcrm"
+    HOSTS = "http://127.0.0.1:5000"  # 配置运行环境ip
 
 
 app = Flask(__name__)

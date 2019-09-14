@@ -84,7 +84,7 @@ CREATE TABLE `permission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` char(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `permission` (
 
 LOCK TABLES `permission` WRITE;
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
-INSERT INTO `permission` VALUES (1,'sales_menu'),(2,'sales_director_menu'),(3,'sales_manage_menu');
+INSERT INTO `permission` VALUES (1,'sales_menu'),(2,'sales_director_menu'),(3,'sales_manage_menu'),(4,'cfo_menu');
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `role_permission` (
   `role_id` int(10) NOT NULL,
   `permission_id` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `role_permission` (
 
 LOCK TABLES `role_permission` WRITE;
 /*!40000 ALTER TABLE `role_permission` DISABLE KEYS */;
-INSERT INTO `role_permission` VALUES (1,1,2),(2,2,3),(3,4,1),(4,5,3);
+INSERT INTO `role_permission` VALUES (1,1,2),(2,2,3),(3,4,1),(4,5,3),(5,3,4);
 /*!40000 ALTER TABLE `role_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +235,7 @@ CREATE TABLE `user_group` (
   `user_id` int(10) NOT NULL,
   `group_id` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,7 +244,7 @@ CREATE TABLE `user_group` (
 
 LOCK TABLES `user_group` WRITE;
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
-INSERT INTO `user_group` VALUES (1,1,7),(2,2,7),(3,3,7),(4,4,7),(5,5,7);
+INSERT INTO `user_group` VALUES (1,1,7),(2,2,7),(3,3,7),(4,4,7),(5,5,6),(6,6,8),(7,7,7);
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-14  3:04:49
+-- Dump completed on 2019-09-14 20:05:52

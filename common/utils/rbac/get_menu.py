@@ -10,7 +10,7 @@ def get_menu(user_id):
     此函数需要传值:user_id
     :return:
     """
-    user_id = 6
+    # user_id = 1
 
     # 获取用户对应的所有角色
     role_list = get_all_roles(user_id)
@@ -41,4 +41,5 @@ def get_menu(user_id):
         menu1["menu_url"] = menu.url
         menu_detail.append(menu1)
 
-    return jsonify(menu_detail)
+    # return jsonify(menu_detail)
+    return menu_detail
